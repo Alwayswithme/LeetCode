@@ -14,11 +14,9 @@ class Solution:
     def mySqrt(self, x):
         if x == 0 or x == 1:
             return x
-
         guess = 1.0
         while not abs(guess * guess - x) / x < 0.00001:
             guess = (guess + x / guess) / 2
-
         result = int(guess)
         if (result * result) > x:
             return result - 1
