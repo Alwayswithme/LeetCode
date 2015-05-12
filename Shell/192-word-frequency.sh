@@ -2,7 +2,7 @@
 #
 # Author     :  Ye Jinchang
 # Date       :  2015-04-24 10:29:19
-# Title      :  #192 word frequency
+# Title      :  192 word frequency
 
 # Write a bash script to calculate the frequency of each word in a text file words.txt.
 # 

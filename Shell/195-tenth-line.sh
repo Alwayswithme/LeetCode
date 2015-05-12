@@ -2,7 +2,7 @@
 #
 # Author     :  Ye Jinchang
 # Date       :  2015-04-24 10:26:06
-# Title      :  #195 tenth line
+# Title      :  195 tenth line
 
 # How would you print just the 10th line of a file?
 #
