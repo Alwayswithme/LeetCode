@@ -19,12 +19,9 @@ class Solution:
         if head == None:
             return head
         pre = None
-        nex = head.next
-        while nex:
-            temp = nex.next
-            nex.next = head
+        while head:
+            temp = head.next
             head.next = pre
             pre = head
-            head = nex
-            nex = temp
-        return head
+            head = temp
+        return pre
