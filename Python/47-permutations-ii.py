@@ -2,7 +2,7 @@
 #
 # Author     :  Ye Jinchang
 # Date       :  2015-06-04 22:24:23
-# Title      :  46 permutations
+# Title      :  47 permutations
 
 # Given a collection of numbers that might contain duplicates, return all possible unique permutations.
 #
