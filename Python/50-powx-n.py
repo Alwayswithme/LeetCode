@@ -1,3 +1,6 @@
+
+# Implement pow(x, n).
+
 class Solution:
     # @param {float} x
     # @param {integer} n
