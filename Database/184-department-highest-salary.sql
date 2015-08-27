@@ -38,7 +38,7 @@ Write a SQL query to find employees who have the highest salary in each of the d
 ****************************************************************/
 
 -- Write your MySQL query statement below
-SELECT d.Name AS Deparment, e.Name AS Employee, e.Salary FROM Employee e,Department d WHERE e.DepartmentId=d.Id AND e.Salary= (SELECT MAX(e2.Salary) FROM Employee e2 WHERE e2.DepartmentId = e.DepartmentId GROUP BY e2.DepartmentId)
+SELECT d.Name AS Deparment, e.Name AS Employee, e.Salary FROM Employee e JOIN Department d ON e.DepartmentId=d.Id WHERE e.Salary= (SELECT MAX(e2.Salary) FROM Employee e2 WHERE e2.DepartmentId = e.DepartmentId)
 
 -- Write your MySQL query statement below
 SELECT d.Name AS Deparment, e.Name As Employee, e.Salary FROM Employee e RIGHT JOIN Department d ON e.DepartmentId = d.Id WHERE (e.DepartmentId, e.Salary) IN (SELECT DepartmentId, MAX(Salary) FROM Employee GROUP BY DepartmentId)
