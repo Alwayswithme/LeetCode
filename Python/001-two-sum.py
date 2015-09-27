@@ -14,14 +14,14 @@
 # Output: index1=1, index2=2 
 
 class Solution:
-    # @param {integer[]} nums
-    # @param {integer} target
-    # @return {integer[]}
     def twoSum(self, nums, target):
-        n = len(nums)
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
         table = {}
-        for i in xrange(n):
-            number = nums[i]
+        for i, number in enumerate(nums):
             if number in table:
                 return [table[number] + 1, i + 1]
             table[target - number] = i
