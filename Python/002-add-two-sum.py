@@ -20,9 +20,9 @@ class Solution:
     # @param {ListNode} l2
     # @return {ListNode}
     def addTwoNumbers(self, l1, l2):
-        head = ListNode(0)
+        dummy = ListNode(0)
         gt10 = 0
-        cursor = head
+        cursor = dummy
         while l1 or l2:
             val = gt10
             if l1:
@@ -31,10 +31,9 @@ class Solution:
             if l2:
                 val += l2.val
                 l2 = l2.next
-            gt10 = val / 10
-            val %= 10
+            gt10, val = divmod(val, 10)
             cursor.next = ListNode(val)
             cursor = cursor.next
         if gt10 > 0:
             cursor.next = ListNode(gt10)
-        return head.next
+        return dummy.next
