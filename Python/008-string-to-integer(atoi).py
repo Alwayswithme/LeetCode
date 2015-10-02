@@ -32,7 +32,7 @@ class Solution:
             i += 1
 
         while i < strLen and str[i].isdigit():
-            result = result * 10 + ord(str[i]) - ord('0')
+            result = result * 10 + int(str[i])
             if result > INT_MAX:
                 return INT_MAX if sign > 0 else INT_MIN
             i += 1

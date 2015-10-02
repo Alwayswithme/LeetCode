@@ -17,21 +17,23 @@
 # string convert(string text, int nRows);
 # 
 # convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR". 
-
-class Solution:
-    # @return a string
-    def convert(self, s, nRows):
-        if (nRows == 1):
+class Solution(object):
+    def convert(self, s, numRows):
+        """
+        :type s: str
+        :type numRows: int
+        :rtype: str
+        """
+        if (numRows == 1):
             return s
+
         index = 0
         step = 1
-        # init nRows lines
-        lines=['' for i in range(nRows)]
-        for i in range(len(s)):
-            # append a char in current line and move to next line
-            lines[index] += s[i]
+        lines=['' for i in range(numRows)]
+        for i in s:
+            lines[index] += i
             index += step
-            if (index == 0) or (index == nRows - 1):
-                # trun around
+            
+            if (index == 0) or (index == numRows - 1):
                 step *= -1
         return "".join(lines)
