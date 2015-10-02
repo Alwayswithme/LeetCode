@@ -44,22 +44,24 @@ class Solution(object):
         :type root: TreeLinkNode
         :rtype: nothing
         """
-        if not root:
-            return
-        nodes = [root]
-        while nodes:
-            self.connectNode(nodes)
-            size = len(nodes)
-            for i in range(size):
-                n = nodes[i]
-                if n.left:
-                    nodes.append(n.left)
-                if n.right:
-                    nodes.append(n.right)
-            nodes = nodes[size:]
+        while root:
+            root = self.connectNode(root)
     
-    def connectNode(self, nodes):
+    def connectNode(self, root):
         pre = None
-        for i in reversed(nodes):
-            i.next = pre
-            pre = i
+        first = None
+        while root:
+            if root.left:
+                if not pre:
+                    first = pre = root.left
+                else:
+                    pre.next = root.left
+                    pre = root.left
+            if root.right:
+                if not pre:
+                    first = pre = root.right
+                else:
+                    pre.next = root.right
+                    pre = root.right
+            root = root.next
+        return first
