@@ -8,16 +8,16 @@
 # 
 # Note: You may not slant the container. 
 
-class Solution:
-    # @param {integer[]} height
-    # @return {integer}
+
+class Solution(object):
     def maxArea(self, height):
-        n = len(height)
-        area = 0
-        if n < 2:
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+        start, end, area = 0, len(height) - 1, 0
+        if end < 1:
             return area
-        start, end = 0, n-1
-        
         while start < end:
             area = max(area, (end - start) * min(height[start], height[end]))
             if height[start] > height[end]:
