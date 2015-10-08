@@ -1,18 +1,21 @@
 #!/bin/python
 #
 # Author     :  Ye Jinchang
-# Date       :  2015-05-05 12:20:13
-# Title      :  13 roman to integer
+# Date       :  2015-10-13 16:14:13
+# Title      :  013 roman to integer
 
 
 # Given a roman numeral, convert it to an integer.
 # 
 # Input is guaranteed to be within the range from 1 to 3999.
 
-class Solution:
-    # @param {string} s
-    # @return {integer}
+
+class Solution(object):
     def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
         romanIntMap = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 
         res = 0;
