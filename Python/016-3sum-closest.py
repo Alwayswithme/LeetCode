@@ -11,11 +11,13 @@
 # 
 #     The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
 
-class Solution:
-    # @param {integer[]} nums
-    # @param {integer} target
-    # @return {integer}
+class Solution(object):
     def threeSumClosest(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
         nums.sort()
         result = nums[0] + nums[1] + nums[2]
         closestDiff = abs(result - target)
@@ -24,10 +26,9 @@ class Solution:
             start, end = i + 1, n - 1
             while start < end:
                 sum = nums[i] + nums[start] + nums[end]
-                diff = abs(sum - target)
                 if sum == target:
                     return sum
-
+                diff = abs(sum - target)
                 if diff < closestDiff:
                     result, closestDiff = sum, diff
 

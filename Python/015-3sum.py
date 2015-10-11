@@ -18,18 +18,19 @@
 #     (-1, 0, 1)
 #     (-1, -1, 2)
 
-class Solution:
-    # @param {integer[]} nums
-    # @return {integer[][]}
+class Solution(object):
     def threeSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
         n = len(nums)
         if n < 3:
             return []
         
         unique = set()
         nums.sort()
-        for x in range(n):
-            target = nums[x]
+        for x, target in enumerate(nums):
             negate = -target
             table = {}
             for i in range(x + 1, n):

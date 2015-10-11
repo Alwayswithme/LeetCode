@@ -14,10 +14,12 @@
 # Note:
 # Although the above answer is in lexicographical order, your answer could be in any order you want. 
 
-class Solution:
-    # @param {string} digits
-    # @return {string[]}
+class Solution(object):
     def letterCombinations(self, digits):
+        """
+        :type digits: str
+        :rtype: List[str]
+        """
         comb = []
         if not digits:
             return comb
@@ -33,7 +35,6 @@ class Solution:
         now = digit[:1]
         rem = digit[1:]
         
-        letters = mapping[now]
-        for i in letters:
+        for i in mapping[now]:
             newConcat = concat + i
             self.add(comb, mapping, rem, newConcat)
