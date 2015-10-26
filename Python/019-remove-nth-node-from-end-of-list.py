@@ -2,7 +2,7 @@
 #
 # Author     :  Ye Jinchang
 # Date       :  2015-05-14 23:31:21
-# Title      :  19 remove nth node from end of list
+# Title      :  019 remove nth node from end of list
 
 # Given a linked list, remove the nth node from the end of list and return its head.
 # 
@@ -22,11 +22,13 @@
 #         self.val = x
 #         self.next = None
 
-class Solution:
-    # @param {ListNode} head
-    # @param {integer} n
-    # @return {ListNode}
+class Solution(object):
     def removeNthFromEnd(self, head, n):
+        """
+        :type head: ListNode
+        :type n: int
+        :rtype: ListNode
+        """
         dummy = ListNode(0)
         dummy.next = head
         slow, fast = dummy, dummy
