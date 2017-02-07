@@ -18,8 +18,6 @@ class Solution(object):
         sign = 1 if x > 0 else -1
         result = 0
         max = 1 << 31
-        if x < 0:
-            sign = -1
         
         num = abs(x)
         while num > 0:
