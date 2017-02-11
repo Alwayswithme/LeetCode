@@ -18,21 +18,19 @@
 #         self.next = None
 
 class Solution:
-    # @param {ListNode} head
-    # @return {ListNode}
     def swapPairs(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
         dummy = ListNode(0)
         dummy.next = head
-        prev, i = dummy, 0
-        while head:
-            i += 1
-            if (i & 1) == 0:
-                #even
-                prev.next.next = head.next
-                head.next = prev.next
-                prev.next = head
-                prev = head.next
-                head = prev.next
-            else:
-                head = head.next
+        prev = dummy
+        while prev.next is not None and prev.next.next is not None:
+            one = prev.next
+            two = prev.next.next
+            one.next = two.next
+            two.next = one
+            prev.next = two
+            prev = one
         return dummy.next
