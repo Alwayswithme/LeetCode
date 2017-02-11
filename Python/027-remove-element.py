@@ -9,16 +9,15 @@
 # The order of elements can be changed. It doesn't matter what you leave beyond the new length. 
 
 class Solution:
-    # @param {integer[]} nums
-    # @param {integer} val
-    # @return {integer}
     def removeElement(self, nums, val):
-        i = 0
-        while i < len(nums):
-            if nums[i] == val:
-                del nums[i]
-            else:
-                i += 1
-            if i >= len(nums):
-                break
-        return len(nums)
+        """
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        """
+        limit = 0
+        for i in range(len(nums)):
+            if nums[i] != val:
+                nums[limit] = nums[i]
+                limit += 1
+        return limit
