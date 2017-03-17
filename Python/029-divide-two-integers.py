@@ -8,17 +8,16 @@
 # 
 # If it is overflow, return MAX_INT. 
 
-class Solution:
+class Solution(object):
     MAX_INT = (1 << 31) - 1
-    # @param {integer} dividend
-    # @param {integer} divisor
-    # @return {integer}
     def divide(self, dividend, divisor):
-        sign = 1
-        if dividend < 0:
-            sign *= -1
-        if divisor < 0:
-            sign *= -1
+        """
+        :type dividend: int
+        :type divisor: int
+        :rtype: int
+        """
+        sign = -1 if ((dividend < 0) ^ (divisor < 0)) else 1
+
         result, dvd, dvs = 0, abs(dividend), abs(divisor)
         while dvd >= dvs:
             inc = dvs
